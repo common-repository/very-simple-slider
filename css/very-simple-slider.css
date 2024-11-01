@@ -1,0 +1,132 @@
+
+.home-carousel {
+    width:100%; 
+    margin:0;
+    padding:0;
+    color: #4D926F;
+
+} 
+
+.home-carousel .carousel-caption {
+    font-size: 1.1rem;
+    background-color:rgba(0, 0, 0, 0.5) !important;
+    background: black !important;
+    opacity: 0.5 !important;
+    filter:Alpha(Opacity=50) !important;
+    border:1px solid black;    
+    padding:5px;
+}
+
+.home-carousel .carousel-caption-right {
+    right:0;
+    left:auto;
+    margin-right: 170px;
+} 
+.home-carousel .carousel-caption-left {
+    left:0; 
+    right:auto;
+    margin-left: 170px;
+}
+
+.home-carousel .carousel-caption-right, .home-carousel .carousel-caption-left {
+    z-index: 10;
+    width: 400px; 
+    top: 10%; 
+    bottom: auto;
+}
+
+
+.home-carousel .carousel-inner > .item > img, .home-carousel .carousel-inner > .item > a > img {
+    width: 100%;
+}
+
+
+
+
+.home-carousel h2, .home-carousel h3, .home-carousel h4, .home-carousel h5 {
+    color:white;
+}
+
+
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+
+
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.full-screen {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home-carousel .carousel-control.left,.home-carousel .carousel-control.right  {background:none;width:25px;}
+.home-carousel .carousel-control.left {left:15px;}
+.home-carousel .carousel-control.right {right:15px;}
+
+@media (max-width: 767px) {
+    .carousel-caption-right, .carousel-caption-left {
+        margin: auto;
+        font-size:0.9rem;
+    }
+
+    .carousel-caption {
+        margin:0 auto !important;
+        width:80% !important;
+        position: relative;
+    }
+
+    .carousel-caption h2, .carousel-caption h3 {
+        font-size:.9em;
+    }
+
+    .carousel-caption p, .carousel-caption span {
+        font-size: .7em;
+    }
+
+}
